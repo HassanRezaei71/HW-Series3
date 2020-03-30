@@ -49,6 +49,27 @@ function newCombineAndSortArrays() {
     }
     return result;
 }
+
 console.log(newCombineAndSortArrays([4, 3, 2], [9, 6, 7, 5], [8, 1, 10]));
 
+
+//      (3)
+function flatAndSortArray(array) {
+    return array.flat(Infinity).sort((a, b) => a - b);
+}
+
+console.log(flatAndSortArray([[2, 3], 5, [[[2, 9], 4], 4], 1, 0]));
+
+
+function newFlatAndSortArray(array) {
+    return array.reduce(function (result, value) {
+        if (Array.isArray(value)) {
+            return result.concat(newFlatAndSortArray(value));
+        } else {
+            return result.concat(value);
+        }
+    }, []).sort((a, b) => a - b);
+}
+
+console.log(newFlatAndSortArray([[2, 3], 5, [[[2, 9], 4], 4], 1, 0]));
 
