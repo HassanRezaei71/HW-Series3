@@ -88,3 +88,18 @@ function newFindByItem(array, target) {
     return `{index:${result}, item:${target}}`;
 }
 console.log(newFindByItem([2, 5, 4, 6, 3], 3));
+
+
+//      (5)
+function replaceByItem(array, currentItem, newItem) {
+    return array.map(function (value) {
+        if (value === currentItem) {
+            return newItem;
+        } else {
+            return value;
+        }
+    });
+}
+
+let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+console.log(replaceByItem(arr, 'e', 't'));
