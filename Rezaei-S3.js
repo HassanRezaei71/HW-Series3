@@ -116,3 +116,21 @@ function extractNumbers(string) {
 }
 
 console.log(extractNumbers("i have 2 apples and 3 pineapples"));
+
+
+//      (7)
+function removeDuplicate(array) {
+    return [...new Set(array)];
+}
+console.log(removeDuplicate([1, 1, 4, 5, 3, 5, 3, 9]));
+
+function newRemoveDuplicate(array) {
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array.indexOf(array[i]) === i) {
+            result.push(array[i]);
+        }
+    }
+    return result;
+}
+console.log(newRemoveDuplicate([1, 2, 1, 4, 2, 5, 4, 5]));
