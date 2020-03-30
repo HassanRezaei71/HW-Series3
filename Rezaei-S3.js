@@ -57,9 +57,7 @@ console.log(newCombineAndSortArrays([4, 3, 2], [9, 6, 7, 5], [8, 1, 10]));
 function flatAndSortArray(array) {
     return array.flat(Infinity).sort((a, b) => a - b);
 }
-
 console.log(flatAndSortArray([[2, 3], 5, [[[2, 9], 4], 4], 1, 0]));
-
 
 function newFlatAndSortArray(array) {
     return array.reduce(function (result, value) {
@@ -70,6 +68,23 @@ function newFlatAndSortArray(array) {
         }
     }, []).sort((a, b) => a - b);
 }
-
 console.log(newFlatAndSortArray([[2, 3], 5, [[[2, 9], 4], 4], 1, 0]));
 
+
+//      (4)
+function findByItem(array, target) {
+    let result = array.indexOf(target);
+    return `{index:${result}, item:${target}}`
+}
+console.log(findByItem([2, 5, 4, 6, 3], 3));
+
+function newFindByItem(array, target) {
+    let result = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === target) {
+            result = i;
+        }
+    }
+    return `{index:${result}, item:${target}}`;
+}
+console.log(newFindByItem([2, 5, 4, 6, 3], 3));
