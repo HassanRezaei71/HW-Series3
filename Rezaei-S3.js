@@ -103,3 +103,16 @@ function replaceByItem(array, currentItem, newItem) {
 
 let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
 console.log(replaceByItem(arr, 'e', 't'));
+
+
+//      (6)
+function extractNumbers(string) {
+    let result = [...string].filter(function (value) {
+        if (!isNaN(value) && value != " ") {
+            return value;
+        }
+    });
+    return result.map(value => +value);
+}
+
+console.log(extractNumbers("i have 2 apples and 3 pineapples"));
